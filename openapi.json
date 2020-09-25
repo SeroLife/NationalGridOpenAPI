@@ -593,6 +593,76 @@
           }
         }
       }
+    },
+    "/intensity/stats/{from}/{to}/{block}": {
+      "get": {
+        "tags": [
+          "Statistics - National"
+        ],
+        "summary": "Get block average Carbon Intensity statistics between from and to datetime",
+        "description": "Get block average Carbon Intensity statistics (average, max, mean) between from and to datetime. The maximum date range is limited to 30 days. The block length must be between 1 and 24 hours and should be an integer. All times provided in UTC (+00:00).",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "from",
+            "description": "Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "to",
+            "description": "End datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "block",
+            "description": "Block length in hours i.e. a block length of 2 hrs over a 24 hr period returns 12 items with the average, max, min for each 2 hr block e.g. 2017-08-26T17:00Z/2017-08-27T17:00Z/2",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=UTF-8;": {
+                "schema": {
+                  "$ref": "#/components/schemas/Statistics"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
