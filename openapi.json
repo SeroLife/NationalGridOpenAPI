@@ -532,6 +532,67 @@
           }
         }
       }
+    },
+    "/intensity/stats/{from}/{to}": {
+      "get": {
+        "tags": [
+          "Statistics - National"
+        ],
+        "summary": "Get Carbon Intensity statistics between from and to datetime",
+        "description": "Get Carbon Intensity statistics (average, max, mean) between from and to datetime. The maximum date range is limited to 30 days. All times provided in UTC (+00:00).",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "from",
+            "description": "Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "to",
+            "description": "End datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=UTF-8;": {
+                "schema": {
+                  "$ref": "#/components/schemas/Statistics"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
