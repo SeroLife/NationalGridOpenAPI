@@ -818,6 +818,174 @@
           }
         }
       }
+    },
+    "/regional":{
+      "get": {
+        "tags": [
+          "Carbon Intensity - Regional (Beta)"
+        ],
+        "summary": "Get Carbon Intensity data for current half hour for GB regions",
+        "description": "Get Regional Carbon Intensity data for current half hour. All times provided in UTC (+00:00).",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=UTF-8;": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegionalFrom-To"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/regional/england":{
+      "get": {
+        "tags": [
+          "Carbon Intensity - Regional (Beta)"
+        ],
+        "summary": "Get Carbon Intensity data for current half hour for England",
+        "description": "Get Carbon Intensity data for current half hour for Wales. All times provided in UTC (+00:00).",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=UTF-8;": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegionalFrom-To"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/regional/scotland":{
+      "get": {
+        "tags": [
+          "Carbon Intensity - Regional (Beta)"
+        ],
+        "summary": "Get Carbon Intensity data for current half hour for Scotland",
+        "description": "Get Carbon Intensity data for current half hour for Scotland. All times provided in UTC (+00:00).",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=UTF-8;": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegionalFrom-To"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/regional/wales":{
+      "get": {
+        "tags": [
+          "Carbon Intensity - Regional (Beta)"
+        ],
+        "summary": "Get Carbon Intensity data for current half hour for Wales",
+        "description": "Get Carbon Intensity data for current half hour for Wales. All times provided in UTC (+00:00).",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=UTF-8;": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegionalFrom-To"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
