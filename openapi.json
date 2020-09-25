@@ -221,6 +221,48 @@
           }
         }
       }
+    },
+    "/intensity/factors": {
+      "get": {
+        "tags": [
+          "Carbon Intensity - National"
+        ],
+        "summary": "Get Carbon Intensity factors for each fuel type",
+        "description": "Get Carbon Intensity factors for each fuel type.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=UTF-8;": {
+                "schema": {
+                  "$ref": "#/components/schemas/Factors"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
