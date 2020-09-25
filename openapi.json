@@ -1,0 +1,548 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "National Grid",
+    "description": "This is Rocketmakers implementation of the National Grid API",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "admin@rocketmakers.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.carbonintensity.org.uk"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Carbon Intensity - National",
+      "description": "National Carbon Intensity data"
+    }
+  ],
+  "paths": {
+    "/intensity": {
+      "get": {
+        "tags": [
+          "Carbon Intensity - National"
+        ],
+        "summary": "Get Carbon Intensity data for current half hour",
+        "description": "Get Carbon Intensity data for current half hour. All times provided in UTC (+00:00).",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=UTF-8;": {
+                "schema": {
+                  "$ref": "#/components/schemas/Intensity"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/intensity/date": {
+      "get": {
+        "tags": [
+          "Carbon Intensity - National"
+        ],
+        "summary": "Get Carbon Intensity data for today",
+        "description": "Get Carbon Intensity data for today. All times provided in UTC (+00:00).",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=UTF-8;": {
+                "schema": {
+                  "$ref": "#/components/schemas/Intensity"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/intensity/date/{date}": {
+      "get": {
+        "tags": [
+          "Carbon Intensity - National"
+        ],
+        "summary": "Get Carbon Intensity data for specific date",
+        "description": "Get Carbon Intensity data for a specific date. All times provided in UTC (+00:00).",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "date",
+            "description": "Date in YYYY-MM-DD format e.g. 2017-08-25",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=UTF-8;": {
+                "schema": {
+                  "$ref": "#/components/schemas/Intensity"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Intensity": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntensityObject"
+            }
+          }
+        }
+      },
+      "RegionalFrom-To": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RegionalFromToObject"
+            }
+          }
+        }
+      },
+      "RegionalID": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RegionalIDObject"
+            }
+          }
+        }
+      },
+      "Factors": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FactorsObject"
+            }
+          }
+        }
+      },
+      "Statistics": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StatisticsObject"
+            }
+          }
+        }
+      },
+      "Generation": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenerationObject"
+            }
+          }
+        }
+      },
+      "IntensityObject": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "description": "Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z. All times provided in UTC (+00:00)."
+          },
+          "to": {
+            "type": "string",
+            "description": "Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z. All times provided in UTC (+00:00)."
+          },
+          "intensity": {
+            "type": "object",
+            "description": "Carbon Intensity data (forecast, actual, index).",
+            "properties": {
+              "forecast": {
+                "type": "number",
+                "description": "The forecast Carbon Intensity for the half hour in units gCO2/kWh."
+              },
+              "actual": {
+                "type": "number",
+                "description": "The estimated actual Carbon Intensity for the half hour in units gCO2/kWh."
+              },
+              "index": {
+                "type": "string",
+                "enum": [
+                  "very low",
+                  "low",
+                  "moderate",
+                  "high",
+                  "very high"
+                ],
+                "description": "The index is a measure of the Carbon Intensity represented on a scale between 'very low', 'low', 'moderate', 'high', 'very high'."
+              }
+            }
+          }
+        }
+      },
+      "FactorsObject": {
+        "type": "object",
+        "properties": {
+          "Biomass": {
+            "type": "number",
+            "description": "Carbon intensity factor of average biomass power plants in gCO2/kWh."
+          },
+          "Coal": {
+            "type": "number",
+            "description": "Carbon intensity factor of average coal power plants in gCO2/kWh."
+          },
+          "Dutch Imports": {
+            "type": "number",
+            "description": "Carbon intensity factor of average long-term Dutch imports in gCO2/kWh."
+          },
+          "French Imports": {
+            "type": "number",
+            "description": "Carbon intensity factor of average long-term French imports in gCO2/kWh."
+          },
+          "Gas (Combined Cycle)": {
+            "type": "number",
+            "description": "Carbon intensity factor of average CCGT power plants in gCO2/kWh."
+          },
+          "Gas (Open Cycle)": {
+            "type": "number",
+            "description": "Carbon intensity factor of average OCGT power plants in gCO2/kWh."
+          },
+          "Hydro": {
+            "type": "number",
+            "description": "Carbon intensity factor of hydro in gCO2/kWh."
+          },
+          "Irish Imports": {
+            "type": "number",
+            "description": "Carbon intensity factor of average long-term Irish imports in gCO2/kWh."
+          },
+          "Nuclear": {
+            "type": "number",
+            "description": "Carbon intensity factor of nuclear in gCO2/kWh."
+          },
+          "Oil": {
+            "type": "number",
+            "description": "Carbon intensity factor of oil power in gCO2/kWh."
+          },
+          "Other": {
+            "type": "number",
+            "description": "Carbon intensity factor of power plants categorised as other in gCO2/kWh."
+          },
+          "Pumped Storage": {
+            "type": "number",
+            "description": "Carbon intensity factor of pumped hydro-electric storage in gCO2/kWh."
+          },
+          "Solar": {
+            "type": "number",
+            "description": "Carbon intensity factor of solar in gCO2/kWh."
+          },
+          "Wind": {
+            "type": "number",
+            "description": "Carbon intensity factor of wind in gCO2/kWh."
+          }
+        }
+      },
+      "StatisticsObject": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "description": "Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z. All times provided in UTC (+00:00)."
+          },
+          "to": {
+            "type": "string",
+            "description": "Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z. All times provided in UTC (+00:00)."
+          },
+          "intensity": {
+            "type": "object",
+            "description": "Carbon Intensity statistics (max, average, min, index).",
+            "properties": {
+              "max": {
+                "type": "number",
+                "description": "The maximum Carbon Intensity for the datetime range in units gCO2/kWh. Future periods use forecast data. Past data uses actual data."
+              },
+              "average": {
+                "type": "number",
+                "description": "The average Carbon Intensity for the datetime range in units gCO2/kWh. Future periods use forecast data. Past data uses actual data."
+              },
+              "min": {
+                "type": "number",
+                "description": "The maximum Carbon Intensity for the datetime range in units gCO2/kWh. Future periods use forecast data. Past data uses actual data."
+              },
+              "index": {
+                "type": "string",
+                "enum": [
+                  "very low",
+                  "low",
+                  "moderate",
+                  "high",
+                  "very high"
+                ],
+                "description": "The index is a measure of the Carbon Intensity represented on a scale between 'very low', 'low', 'moderate', 'high', 'very high'."
+              }
+            }
+          }
+        }
+      },
+      "GenerationObject": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "description": "Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z. All times provided in UTC (+00:00)."
+          },
+          "to": {
+            "type": "string",
+            "description": "Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z. All times provided in UTC (+00:00)."
+          },
+          "generationmix": {
+            "type": "array",
+            "description": "Fuel types",
+            "items": {
+              "$ref": "#/components/schemas/FuelTypesObject"
+            }
+          }
+        }
+      },
+      "RegionalFromToObject": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "description": "Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z. All times provided in UTC (+00:00)."
+          },
+          "to": {
+            "type": "string",
+            "description": "Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z. All times provided in UTC (+00:00)."
+          },
+          "regions": {
+            "type": "array",
+            "properties": {
+              "regionid": {
+                "type": "number",
+                "description": "Region ID 1-17."
+              },
+              "dnoregion": {
+                "type": "string",
+                "description": "Name of Distribution Network Operator (DNO) in region."
+              },
+              "shortname": {
+                "type": "string",
+                "description": "Name of region."
+              },
+              "postcode": {
+                "type": "string",
+                "description": "Outward postcode i.e. RG10."
+              },
+              "intensity": {
+                "type": "object",
+                "properties": {
+                  "forecast": {
+                    "type": "string",
+                    "description": "The forecast Carbon Intensity for the half hour in units gCO2/kWh."
+                  },
+                  "index": {
+                    "type": "string",
+                    "enum": [
+                      "very low",
+                      "low",
+                      "moderate",
+                      "high",
+                      "very high"
+                    ],
+                    "description": "The index is a measure of the Carbon Intensity represented on a scale between 'very low', 'low', 'moderate', 'high', 'very high'."
+                  }
+                }
+              },
+              "generationmix": {
+                "type": "array",
+                "description": "Fuel types",
+                "items": {
+                  "$ref": "#/components/schemas/FuelTypesObject"
+                }
+              }
+            }
+          }
+        }
+      },
+      "RegionalIDObject": {
+        "type": "object",
+        "properties": {
+          "regionid": {
+            "type": "number",
+            "description": "Region ID 1-17."
+          },
+          "dnoregion": {
+            "type": "string",
+            "description": "Name of Distribution Network Operator (DNO) in region."
+          },
+          "shortname": {
+            "type": "string",
+            "description": "Name of region."
+          },
+          "postcode": {
+            "type": "string",
+            "description": "Outward postcode i.e. RG10."
+          },
+          "data": {
+            "description": "GB regions (regionid, dnoregion, shortname, intensity).",
+            "type": "array",
+            "properties": {
+              "intensity": {
+                "type": "object",
+                "properties": {
+                  "forecast": {
+                    "type": "string",
+                    "description": "The forecast Carbon Intensity for the half hour in units gCO2/kWh."
+                  },
+                  "index": {
+                    "type": "string",
+                    "enum": [
+                      "very low",
+                      "low",
+                      "moderate",
+                      "high",
+                      "very high"
+                    ],
+                    "description": "The index is a measure of the Carbon Intensity represented on a scale between 'very low', 'low', 'moderate', 'high', 'very high'."
+                  }
+                }
+              },
+              "from": {
+                "type": "string",
+                "description": "Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z. All times provided in UTC (+00:00)."
+              },
+              "to": {
+                "type": "string",
+                "description": "Datetime in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z. All times provided in UTC (+00:00)."
+              },
+              "generationmix": {
+                "type": "array",
+                "description": "Fuel types",
+                "items": {
+                  "$ref": "#/components/schemas/FuelTypesObject"
+                }
+              }
+            }
+          }
+        }
+      },
+      "FuelTypesObject": {
+        "type": "object",
+        "properties": {
+          "fuel": {
+            "type": "string",
+            "description": "Name of fuel type."
+          },
+          "perc": {
+            "type": "string",
+            "description": "Generation output of fuel type as a percentage of total generation."
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
