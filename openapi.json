@@ -663,6 +663,161 @@
           }
         }
       }
+    },
+    "/generation":{
+      "get": {
+        "tags": [
+          "Generation Mix - National (Beta)"
+        ],
+        "summary": "Get generation mix for current half hour",
+        "description": "Get generation mix for current half hour. All times provided in UTC (+00:00).",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=UTF-8;": {
+                "schema": {
+                  "$ref": "#/components/schemas/Generation"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/generation/{from}/pt24h":{
+      "get": {
+        "tags": [
+          "Generation Mix - National (Beta)"
+        ],
+        "summary": "Get generation mix for the past 24 hours",
+        "description": "Get generation mix for the past 24 hours. All times provided in UTC (+00:00).",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "from",
+            "description": "Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=UTF-8;": {
+                "schema": {
+                  "$ref": "#/components/schemas/Generation"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/generation/{from}/{to}":{
+      "get": {
+        "tags": [
+          "Generation Mix - National (Beta)"
+        ],
+        "summary": "Get generation mix between from and to datetimes",
+        "description": "Get generation mix between from and to datetimes. All times provided in UTC (+00:00).",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "from",
+            "description": "Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "to",
+            "description": "End datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2017-08-25T12:35Z",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=UTF-8;": {
+                "schema": {
+                  "$ref": "#/components/schemas/Generation"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
