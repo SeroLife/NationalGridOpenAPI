@@ -992,8 +992,8 @@
         "tags": [
           "Carbon Intensity - Regional (Beta)"
         ],
-        "summary": "Get Carbon Intensity data for current half hour for Wales",
-        "description": "Get Carbon Intensity data for current half hour for Wales. All times provided in UTC (+00:00).",
+        "summary": "Get Carbon Intensity data for current half hour for specified postcode",
+        "description": "Get Regional Carbon Intensity data for current half hour for specified postcode. All times provided in UTC (+00:00).",
         "parameters": [
           {
             "in": "path",
