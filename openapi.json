@@ -986,6 +986,58 @@
           }
         }
       }
+    },
+    "/regional/postcode/{postcode}":{
+      "get": {
+        "tags": [
+          "Carbon Intensity - Regional (Beta)"
+        ],
+        "summary": "Get Carbon Intensity data for current half hour for Wales",
+        "description": "Get Carbon Intensity data for current half hour for Wales. All times provided in UTC (+00:00).",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "postcode",
+            "description": "Outward postcode i.e. RG41 or SW1 or TF8. Do not include full postcode, outward postcode only.",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=UTF-8;": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegionalID"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
