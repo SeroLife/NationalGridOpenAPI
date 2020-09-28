@@ -1176,7 +1176,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalFromTo"
+                  "$ref": "#/components/schemas/RegionalID"
                 }
               }
             }
