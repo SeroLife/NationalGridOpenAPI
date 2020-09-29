@@ -18,3 +18,14 @@ npm run generate
 Follow the examples already created inside the .json document.
 
 [https://swagger.io/specification/](https://swagger.io/specification/)
+
+## Bugs
+
+Until the cli is brought up to 5.0.0.
+
+```
+//Find and replace all instances of this in `api.ts`
+delete localVarUrlObj.search;
+// with this
+localVarUrlObj.search = null;
+```

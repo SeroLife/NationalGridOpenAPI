@@ -4,10 +4,35 @@ import { Args } from '@rocketmakers/shell-commands/lib/args';
 import { Shell } from '@rocketmakers/shell-commands/lib/shell';
 import { FileSystem } from '@rocketmakers/shell-commands/lib/fs';
 import { resolve } from 'path';
+import { copyFile, rmdir } from 'fs';
 
 export function getFileExtension(filename: string): string {
   const ext = /^.+\.([^.]+)$/.exec(filename);
   return ext == null ? '' : ext[1];
+}
+
+export async function copyFilesAsync(srcFile: string, dstFile: string): Promise<boolean> {
+  return new Promise((resolve, reject) => {
+    copyFile(srcFile, dstFile, (err) => {
+      if (err) {
+        reject(err);
+      }
+
+      resolve(true);
+    });
+  });
+}
+
+export async function removeDirectoryAsync(dirPath: string): Promise<boolean> {
+  return new Promise((resolve, reject) => {
+    rmdir(dirPath, (err) => {
+      if (err) {
+        reject(err);
+      }
+
+      resolve(true);
+    });
+  });
 }
 
 (async () => {
@@ -25,7 +50,7 @@ export function getFileExtension(filename: string): string {
   setDefaultLoggerLevel(args.log as LoggerLevel);
   const logger = createLogger('National Grid Api Client');
 
-  const tmpOutputPath = '/tmp/nationalgrid-api';
+  const tmpOutputPath = resolve(__dirname, './tmp/nationalgrid-api');
 
   const onshapeSwaggerPath = resolve(
     __dirname,
@@ -35,7 +60,8 @@ export function getFileExtension(filename: string): string {
   const outputPath = resolve(__dirname, '.', 'nationalgrid', 'sdk');
 
   try {
-    await Shell.exec('mkdir', ['-p', tmpOutputPath]);
+    await FileSystem.makeDirectory(tmpOutputPath, { recursive: true });
+
 
     await Shell.exec('npx', [
       '@openapitools/openapi-generator-cli',
@@ -63,11 +89,16 @@ export function getFileExtension(filename: string): string {
     const filteredFiles = files.filter(x => getFileExtension(x.name) === 'ts');
 
     for (const file of filteredFiles) {
-      await Shell.exec('cp', [file.path, outputPath]);
+      await copyFilesAsync(file.path, `${outputPath}/${file.name}`);
     }
 
-    await Shell.exec('rm', ['-rf', tmpOutputPath]);
+    for (const file of files) {
+      await FileSystem.unlinkAsync(file.path);
+    }
 
+    await FileSystem.unlinkAsync(resolve(tmpOutputPath, '.openapi-generator', 'VERSION'));
+    await removeDirectoryAsync(resolve(tmpOutputPath, '.openapi-generator'));
+    await removeDirectoryAsync(tmpOutputPath);
     logger.info('Generated National Grid Api Client');
   } catch (error) {
     logger.error(error);

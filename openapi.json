@@ -664,7 +664,7 @@
         }
       }
     },
-    "/generation":{
+    "/generation": {
       "get": {
         "tags": [
           "Generation Mix - National (Beta)"
@@ -706,7 +706,7 @@
         }
       }
     },
-    "/generation/{from}/pt24h":{
+    "/generation/{from}/pt24h": {
       "get": {
         "tags": [
           "Generation Mix - National (Beta)"
@@ -758,7 +758,7 @@
         }
       }
     },
-    "/generation/{from}/{to}":{
+    "/generation/{from}/{to}": {
       "get": {
         "tags": [
           "Generation Mix - National (Beta)"
@@ -819,7 +819,7 @@
         }
       }
     },
-    "/regional":{
+    "/regional": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -833,7 +833,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalFrom-To"
+                  "$ref": "#/components/schemas/RegionalFromTo"
                 }
               }
             }
@@ -861,7 +861,7 @@
         }
       }
     },
-    "/regional/england":{
+    "/regional/england": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -875,7 +875,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalFrom-To"
+                  "$ref": "#/components/schemas/RegionalFromTo"
                 }
               }
             }
@@ -903,7 +903,7 @@
         }
       }
     },
-    "/regional/scotland":{
+    "/regional/scotland": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -917,7 +917,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalFrom-To"
+                  "$ref": "#/components/schemas/RegionalFromTo"
                 }
               }
             }
@@ -945,7 +945,7 @@
         }
       }
     },
-    "/regional/wales":{
+    "/regional/wales": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -959,7 +959,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalFrom-To"
+                  "$ref": "#/components/schemas/RegionalFromTo"
                 }
               }
             }
@@ -987,7 +987,7 @@
         }
       }
     },
-    "/regional/postcode/{postcode}":{
+    "/regional/postcode/{postcode}": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -1039,7 +1039,7 @@
         }
       }
     },
-    "/regional/regionid/{regionid}":{
+    "/regional/regionid/{regionid}": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -1091,7 +1091,7 @@
         }
       }
     },
-    "/regional/intensity/{from}/fw24h":{
+    "/regional/intensity/{from}/fw24h": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -1143,7 +1143,7 @@
         }
       }
     },
-    "/regional/intensity/{from}/fw24h/postcode/{postcode}":{
+    "/regional/intensity/{from}/fw24h/postcode/{postcode}": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -1204,7 +1204,7 @@
         }
       }
     },
-    "/regional/intensity/{from}/fw24h/regionid/{regionid}":{
+    "/regional/intensity/{from}/fw24h/regionid/{regionid}": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -1237,7 +1237,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalId"
+                  "$ref": "#/components/schemas/RegionalID"
                 }
               }
             }
@@ -1265,7 +1265,7 @@
         }
       }
     },
-    "/regional/intensity/{from}/fw48h":{
+    "/regional/intensity/{from}/fw48h": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -1317,7 +1317,7 @@
         }
       }
     },
-    "/regional/intensity/{from}/fw48h/postcode/{postcode}":{
+    "/regional/intensity/{from}/fw48h/postcode/{postcode}": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -1378,7 +1378,7 @@
         }
       }
     },
-    "/regional/intensity/{from}/fw48h/regionid/{regionid}":{
+    "/regional/intensity/{from}/fw48h/regionid/{regionid}": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -1439,7 +1439,7 @@
         }
       }
     },
-    "/regional/intensity/{from}/pt24h":{
+    "/regional/intensity/{from}/pt24h": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -1491,7 +1491,7 @@
         }
       }
     },
-    "/regional/intensity/{from}/pt24h/postcode/{postcode}":{
+    "/regional/intensity/{from}/pt24h/postcode/{postcode}": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -1585,7 +1585,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalFrom-To"
+                  "$ref": "#/components/schemas/RegionalFromTo"
                 }
               }
             }
@@ -1683,7 +1683,7 @@
         }
       }
     },
-    "/regional/intensity/{from}/{to}/regionid/{regionid}":{
+    "/regional/intensity/{from}/{to}/regionid/{regionid}": {
       "get": {
         "tags": [
           "Carbon Intensity - Regional (Beta)"
@@ -1765,9 +1765,12 @@
               "$ref": "#/components/schemas/IntensityObject"
             }
           }
-        }
+        },
+        "required": [
+          "data"
+        ]
       },
-      "RegionalFrom-To": {
+      "RegionalFromTo": {
         "type": "object",
         "properties": {
           "data": {
@@ -1776,7 +1779,10 @@
               "$ref": "#/components/schemas/RegionalFromToObject"
             }
           }
-        }
+        },
+        "required": [
+          "data"
+        ]
       },
       "RegionalID": {
         "type": "object",
@@ -1787,7 +1793,10 @@
               "$ref": "#/components/schemas/RegionalIDObject"
             }
           }
-        }
+        },
+        "required": [
+          "data"
+        ]
       },
       "Factors": {
         "type": "object",
@@ -1798,7 +1807,10 @@
               "$ref": "#/components/schemas/FactorsObject"
             }
           }
-        }
+        },
+        "required": [
+          "data"
+        ]
       },
       "Statistics": {
         "type": "object",
@@ -1809,7 +1821,10 @@
               "$ref": "#/components/schemas/StatisticsObject"
             }
           }
-        }
+        },
+        "required": [
+          "data"
+        ]
       },
       "Generation": {
         "type": "object",
@@ -1820,7 +1835,10 @@
               "$ref": "#/components/schemas/GenerationObject"
             }
           }
-        }
+        },
+        "required": [
+          "data"
+        ]
       },
       "IntensityObject": {
         "type": "object",
@@ -1856,12 +1874,38 @@
                 ],
                 "description": "The index is a measure of the Carbon Intensity represented on a scale between 'very low', 'low', 'moderate', 'high', 'very high'."
               }
-            }
+            },
+            "required": [
+              "forecast",
+              "actual",
+              "index"
+            ]
           }
-        }
+        },
+        "required": [
+          "from",
+          "to",
+          "intensity"
+        ]
       },
       "FactorsObject": {
         "type": "object",
+        "required": [
+          "Biomass",
+          "Coal",
+          "Dutch Imports",
+          "French Imports",
+          "Gas (Combined Cycle)",
+          "Gas (Open Cycle)",
+          "Hydro",
+          "Irish Imports",
+          "Nuclear",
+          "Oil",
+          "Other",
+          "Pumped Storage",
+          "Solar",
+          "Wind"
+        ],
         "properties": {
           "Biomass": {
             "type": "number",
@@ -1923,6 +1967,11 @@
       },
       "StatisticsObject": {
         "type": "object",
+        "required": [
+          "from",
+          "to",
+          "intensity"
+        ],
         "properties": {
           "from": {
             "type": "string",
@@ -1935,6 +1984,12 @@
           "intensity": {
             "type": "object",
             "description": "Carbon Intensity statistics (max, average, min, index).",
+            "required": [
+              "max",
+              "average",
+              "min",
+              "index"
+            ],
             "properties": {
               "max": {
                 "type": "number",
@@ -1981,7 +2036,12 @@
               "$ref": "#/components/schemas/FuelTypesObject"
             }
           }
-        }
+        },
+        "required": [
+          "from",
+          "to",
+          "generationmix"
+        ]
       },
       "RegionalFromToObject": {
         "type": "object",
@@ -1996,53 +2056,16 @@
           },
           "regions": {
             "type": "array",
-            "properties": {
-              "regionid": {
-                "type": "number",
-                "description": "Region ID 1-17."
-              },
-              "dnoregion": {
-                "type": "string",
-                "description": "Name of Distribution Network Operator (DNO) in region."
-              },
-              "shortname": {
-                "type": "string",
-                "description": "Name of region."
-              },
-              "postcode": {
-                "type": "string",
-                "description": "Outward postcode i.e. RG10."
-              },
-              "intensity": {
-                "type": "object",
-                "properties": {
-                  "forecast": {
-                    "type": "string",
-                    "description": "The forecast Carbon Intensity for the half hour in units gCO2/kWh."
-                  },
-                  "index": {
-                    "type": "string",
-                    "enum": [
-                      "very low",
-                      "low",
-                      "moderate",
-                      "high",
-                      "very high"
-                    ],
-                    "description": "The index is a measure of the Carbon Intensity represented on a scale between 'very low', 'low', 'moderate', 'high', 'very high'."
-                  }
-                }
-              },
-              "generationmix": {
-                "type": "array",
-                "description": "Fuel types",
-                "items": {
-                  "$ref": "#/components/schemas/FuelTypesObject"
-                }
-              }
+            "items": {
+              "$ref": "#/components/schemas/RegionsObject"
             }
           }
-        }
+        },
+        "required": [
+          "from",
+          "to",
+          "regions"
+        ]
       },
       "RegionalIDObject": {
         "type": "object",
@@ -2085,7 +2108,11 @@
                     ],
                     "description": "The index is a measure of the Carbon Intensity represented on a scale between 'very low', 'low', 'moderate', 'high', 'very high'."
                   }
-                }
+                },
+                "required": [
+                  "forecast",
+                  "index"
+                ]
               },
               "from": {
                 "type": "string",
@@ -2102,9 +2129,81 @@
                   "$ref": "#/components/schemas/FuelTypesObject"
                 }
               }
+            },
+            "required": [
+              "from",
+              "to",
+              "intensity",
+              "generationmix"
+            ]
+          }
+        },
+        "required": [
+          "regionid",
+          "dnoregion",
+          "postcode",
+          "data"
+        ]
+      },
+      "RegionsObject": {
+        "type": "object",
+        "properties": {
+          "regionid": {
+            "type": "number",
+            "description": "Region ID 1-17."
+          },
+          "dnoregion": {
+            "type": "string",
+            "description": "Name of Distribution Network Operator (DNO) in region."
+          },
+          "shortname": {
+            "type": "string",
+            "description": "Name of region."
+          },
+          "postcode": {
+            "type": "string",
+            "description": "Outward postcode i.e. RG10."
+          },
+          "intensity": {
+            "type": "object",
+            "properties": {
+              "forecast": {
+                "type": "string",
+                "description": "The forecast Carbon Intensity for the half hour in units gCO2/kWh."
+              },
+              "index": {
+                "type": "string",
+                "enum": [
+                  "very low",
+                  "low",
+                  "moderate",
+                  "high",
+                  "very high"
+                ],
+                "description": "The index is a measure of the Carbon Intensity represented on a scale between 'very low', 'low', 'moderate', 'high', 'very high'."
+              }
+            },
+            "required": [
+              "forecast",
+              "index"
+            ]
+          },
+          "generationmix": {
+            "type": "array",
+            "description": "Fuel types",
+            "items": {
+              "$ref": "#/components/schemas/FuelTypesObject"
             }
           }
-        }
+        },
+        "required": [
+          "regionid",
+          "dnoregion",
+          "shortname",
+          "postcode",
+          "intensity",
+          "generationmix"
+        ]
       },
       "FuelTypesObject": {
         "type": "object",
@@ -2117,7 +2216,11 @@
             "type": "string",
             "description": "Generation output of fuel type as a percentage of total generation."
           }
-        }
+        },
+        "required": [
+          "fuel",
+          "perc"
+        ]
       },
       "Error": {
         "type": "object",

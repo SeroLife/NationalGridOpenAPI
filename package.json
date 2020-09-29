@@ -5,14 +5,26 @@
   "main": "index.js",
   "scripts": {
     "ts-run": "ts-node -P ./tsconfig.json",
-    "generate": "npm run ts-run -- index.ts"
+    "generate": "npm run ts-run -- index.ts",
+    "test": "npm run ts-run -- _tests/basic.ts",
+    "test-api": "nyc ava _tests/*.test.ts --verbose --concurrency=8 --timeout=2m"
   },
   "author": "Rocketmakers",
   "license": "ISC",
   "dependencies": {
     "@rocketmakers/shell-commands": "^0.1.21",
     "@types/node": "^14.11.2",
+    "ava": "^3.13.0",
+    "nyc": "^15.1.0",
     "ts-node": "^9.0.0",
-    "typescript": "^4.0.3"
+    "typescript": "^3.9.3"
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
   }
 }
