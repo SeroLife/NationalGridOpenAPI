@@ -27,9 +27,7 @@
   "paths": {
     "/intensity": {
       "get": {
-        "tags": [
-          "Carbon Intensity - National"
-        ],
+        "tags": ["Carbon Intensity - National"],
         "summary": "Get Carbon Intensity data for current half hour",
         "description": "Get Carbon Intensity data for current half hour. All times provided in UTC (+00:00).",
         "parameters": [],
@@ -69,9 +67,7 @@
     },
     "/intensity/date": {
       "get": {
-        "tags": [
-          "Carbon Intensity - National"
-        ],
+        "tags": ["Carbon Intensity - National"],
         "summary": "Get Carbon Intensity data for today",
         "description": "Get Carbon Intensity data for today. All times provided in UTC (+00:00).",
         "parameters": [],
@@ -111,9 +107,7 @@
     },
     "/intensity/date/{date}": {
       "get": {
-        "tags": [
-          "Carbon Intensity - National"
-        ],
+        "tags": ["Carbon Intensity - National"],
         "summary": "Get Carbon Intensity data for specific date",
         "description": "Get Carbon Intensity data for a specific date. All times provided in UTC (+00:00).",
         "parameters": [
@@ -163,9 +157,7 @@
     },
     "/intensity/date/{date}/{period}": {
       "get": {
-        "tags": [
-          "Carbon Intensity - National"
-        ],
+        "tags": ["Carbon Intensity - National"],
         "summary": "Get Carbon Intensity data for specific date and period",
         "description": "Get Carbon Intensity data for a specific date and half hour settlement period. All times provided in UTC (+00:00).",
         "parameters": [
@@ -224,9 +216,7 @@
     },
     "/intensity/factors": {
       "get": {
-        "tags": [
-          "Carbon Intensity - National"
-        ],
+        "tags": ["Carbon Intensity - National"],
         "summary": "Get Carbon Intensity factors for each fuel type",
         "description": "Get Carbon Intensity factors for each fuel type.",
         "parameters": [],
@@ -266,9 +256,7 @@
     },
     "/intensity/{from}": {
       "get": {
-        "tags": [
-          "Carbon Intensity - National"
-        ],
+        "tags": ["Carbon Intensity - National"],
         "summary": "Get Carbon Intensity data for specific half hour period",
         "description": "Get Carbon Intensity data for specific half hour period. All times provided in UTC (+00:00).",
         "parameters": [
@@ -318,11 +306,9 @@
     },
     "/intensity/{from}/fw24h": {
       "get": {
-        "tags": [
-          "Carbon Intensity - National"
-        ],
+        "tags": ["Carbon Intensity - National"],
         "summary": "Get Carbon Intensity data 24hrs forwards from specific datetime",
-        "description": "Get Carbon Intensity data between the {from} datetime specified and 24hrs before. All times provided in UTC (+00:00).",
+        "description": "Get Carbon Intensity data between the {from} datetime specified and 24hrs after. All times provided in UTC (+00:00).",
         "parameters": [
           {
             "in": "path",
@@ -370,11 +356,9 @@
     },
     "/intensity/{from}/fw48h": {
       "get": {
-        "tags": [
-          "Carbon Intensity - National"
-        ],
+        "tags": ["Carbon Intensity - National"],
         "summary": "Get Carbon Intensity data 48hrs forwards from specific datetime",
-        "description": "Get Carbon Intensity data between the {from} datetime specified and 48hrs before. All times provided in UTC (+00:00).",
+        "description": "Get Carbon Intensity data between the {from} datetime specified and 48hrs after. All times provided in UTC (+00:00).",
         "parameters": [
           {
             "in": "path",
@@ -422,9 +406,7 @@
     },
     "/intensity/{from}/pt24h": {
       "get": {
-        "tags": [
-          "Carbon Intensity - National"
-        ],
+        "tags": ["Carbon Intensity - National"],
         "summary": "Get Carbon Intensity data 24hrs in the past of a specific datetime",
         "description": "Get Carbon Intensity data between the {from} datetime specified and 24hrs before. All times provided in UTC (+00:00).",
         "parameters": [
@@ -474,9 +456,7 @@
     },
     "/intensity/{from}/{to}": {
       "get": {
-        "tags": [
-          "Carbon Intensity - National"
-        ],
+        "tags": ["Carbon Intensity - National"],
         "summary": "Get Carbon Intensity data between from and to datetime",
         "description": "Get Carbon Intensity data between the {from} and {to} datetimes. The maximum date range is limited to 14 days. All times provided in UTC (+00:00).",
         "parameters": [
@@ -535,9 +515,7 @@
     },
     "/intensity/stats/{from}/{to}": {
       "get": {
-        "tags": [
-          "Statistics - National"
-        ],
+        "tags": ["Statistics - National"],
         "summary": "Get Carbon Intensity statistics between from and to datetime",
         "description": "Get Carbon Intensity statistics (average, max, mean) between from and to datetime. The maximum date range is limited to 30 days. All times provided in UTC (+00:00).",
         "parameters": [
@@ -596,9 +574,7 @@
     },
     "/intensity/stats/{from}/{to}/{block}": {
       "get": {
-        "tags": [
-          "Statistics - National"
-        ],
+        "tags": ["Statistics - National"],
         "summary": "Get block average Carbon Intensity statistics between from and to datetime",
         "description": "Get block average Carbon Intensity statistics (average, max, mean) between from and to datetime. The maximum date range is limited to 30 days. The block length must be between 1 and 24 hours and should be an integer. All times provided in UTC (+00:00).",
         "parameters": [
@@ -666,9 +642,7 @@
     },
     "/generation": {
       "get": {
-        "tags": [
-          "Generation Mix - National (Beta)"
-        ],
+        "tags": ["Generation Mix - National (Beta)"],
         "summary": "Get generation mix for current half hour",
         "description": "Get generation mix for current half hour. All times provided in UTC (+00:00).",
         "parameters": [],
@@ -708,9 +682,7 @@
     },
     "/generation/{from}/pt24h": {
       "get": {
-        "tags": [
-          "Generation Mix - National (Beta)"
-        ],
+        "tags": ["Generation Mix - National (Beta)"],
         "summary": "Get generation mix for the past 24 hours",
         "description": "Get generation mix for the past 24 hours. All times provided in UTC (+00:00).",
         "parameters": [
@@ -760,9 +732,7 @@
     },
     "/generation/{from}/{to}": {
       "get": {
-        "tags": [
-          "Generation Mix - National (Beta)"
-        ],
+        "tags": ["Generation Mix - National (Beta)"],
         "summary": "Get generation mix between from and to datetimes",
         "description": "Get generation mix between from and to datetimes. All times provided in UTC (+00:00).",
         "parameters": [
@@ -821,9 +791,7 @@
     },
     "/regional": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for current half hour for GB regions",
         "description": "Get Regional Carbon Intensity data for current half hour. All times provided in UTC (+00:00).",
         "parameters": [],
@@ -863,9 +831,7 @@
     },
     "/regional/england": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for current half hour for England",
         "description": "Get Carbon Intensity data for current half hour for Wales. All times provided in UTC (+00:00).",
         "parameters": [],
@@ -905,9 +871,7 @@
     },
     "/regional/scotland": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for current half hour for Scotland",
         "description": "Get Carbon Intensity data for current half hour for Scotland. All times provided in UTC (+00:00).",
         "parameters": [],
@@ -947,9 +911,7 @@
     },
     "/regional/wales": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for current half hour for Wales",
         "description": "Get Carbon Intensity data for current half hour for Wales. All times provided in UTC (+00:00).",
         "parameters": [],
@@ -989,9 +951,7 @@
     },
     "/regional/postcode/{postcode}": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for current half hour for specified postcode",
         "description": "Get Regional Carbon Intensity data for current half hour for specified postcode. All times provided in UTC (+00:00).",
         "parameters": [
@@ -1041,9 +1001,7 @@
     },
     "/regional/regionid/{regionid}": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for current half hour for specified region",
         "description": "Get Regional Carbon Intensity data for current half hour for specified region. All times provided in UTC (+00:00).",
         "parameters": [
@@ -1093,9 +1051,7 @@
     },
     "/regional/intensity/{from}/fw24h": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for next 24h for GB regions",
         "description": "Get Regional Carbon Intensity data for next 24h. All times provided in UTC (+00:00).",
         "parameters": [
@@ -1145,9 +1101,7 @@
     },
     "/regional/intensity/{from}/fw24h/postcode/{postcode}": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for next 24h for GB regions",
         "description": "Get Regional Carbon Intensity data for next 24h. All times provided in UTC (+00:00).",
         "parameters": [
@@ -1206,9 +1160,7 @@
     },
     "/regional/intensity/{from}/fw24h/regionid/{regionid}": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for next 24h for GB regions",
         "description": "Get Regional Carbon Intensity data for next 24h. All times provided in UTC (+00:00).",
         "parameters": [
@@ -1267,9 +1219,7 @@
     },
     "/regional/intensity/{from}/fw48h": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for next 48h for GB regions",
         "description": "Get Regional Carbon Intensity data for next 48h. All times provided in UTC (+00:00).",
         "parameters": [
@@ -1319,9 +1269,7 @@
     },
     "/regional/intensity/{from}/fw48h/postcode/{postcode}": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for next 48h for GB regions",
         "description": "Get Regional Carbon Intensity data for next 48h. All times provided in UTC (+00:00).",
         "parameters": [
@@ -1380,9 +1328,7 @@
     },
     "/regional/intensity/{from}/fw48h/regionid/{regionid}": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for next 48h for specified region",
         "description": "Get Regional Carbon Intensity data for next 48h for specified region. All times provided in UTC (+00:00).",
         "parameters": [
@@ -1441,9 +1387,7 @@
     },
     "/regional/intensity/{from}/pt24h": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for past 24h for GB regions",
         "description": "Get Regional Carbon Intensity data for past 24h. All times provided in UTC (+00:00).",
         "parameters": [
@@ -1493,9 +1437,7 @@
     },
     "/regional/intensity/{from}/pt24h/postcode/{postcode}": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for past 24h for specified postcode",
         "description": "Get Regional Carbon Intensity data for past 24h for specified postcode. All times provided in UTC (+00:00).",
         "parameters": [
@@ -1554,9 +1496,7 @@
     },
     "/regional/intensity/{from}/{to}": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data for past 24h for specified postcode",
         "description": "Get Regional Carbon Intensity data for past 24h for specified postcode. All times provided in UTC (+00:00).",
         "parameters": [
@@ -1615,9 +1555,7 @@
     },
     "/regional/intensity/{from}/{to}/postcode/{postcode}": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data between specified datetimes for specified postcode",
         "description": "Get Regional Carbon Intensity data between specified datetimes for specified postcode. All times provided in UTC (+00:00).",
         "parameters": [
@@ -1685,9 +1623,7 @@
     },
     "/regional/intensity/{from}/{to}/regionid/{regionid}": {
       "get": {
-        "tags": [
-          "Carbon Intensity - Regional (Beta)"
-        ],
+        "tags": ["Carbon Intensity - Regional (Beta)"],
         "summary": "Get Carbon Intensity data between specified datetimes for specified region",
         "description": "Get Regional Carbon Intensity data between specified datetimes for specified region. All times provided in UTC (+00:00).",
         "parameters": [
@@ -1766,9 +1702,7 @@
             }
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "RegionalFromTo": {
         "type": "object",
@@ -1780,9 +1714,7 @@
             }
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "RegionalID": {
         "type": "object",
@@ -1794,9 +1726,7 @@
             }
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "Factors": {
         "type": "object",
@@ -1808,9 +1738,7 @@
             }
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "Statistics": {
         "type": "object",
@@ -1822,9 +1750,7 @@
             }
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "Generation": {
         "type": "object",
@@ -1836,9 +1762,7 @@
             }
           }
         },
-        "required": [
-          "data"
-        ]
+        "required": ["data"]
       },
       "IntensityObject": {
         "type": "object",
@@ -1865,28 +1789,14 @@
               },
               "index": {
                 "type": "string",
-                "enum": [
-                  "very low",
-                  "low",
-                  "moderate",
-                  "high",
-                  "very high"
-                ],
+                "enum": ["very low", "low", "moderate", "high", "very high"],
                 "description": "The index is a measure of the Carbon Intensity represented on a scale between 'very low', 'low', 'moderate', 'high', 'very high'."
               }
             },
-            "required": [
-              "forecast",
-              "actual",
-              "index"
-            ]
+            "required": ["forecast", "actual", "index"]
           }
         },
-        "required": [
-          "from",
-          "to",
-          "intensity"
-        ]
+        "required": ["from", "to", "intensity"]
       },
       "FactorsObject": {
         "type": "object",
@@ -1967,11 +1877,7 @@
       },
       "StatisticsObject": {
         "type": "object",
-        "required": [
-          "from",
-          "to",
-          "intensity"
-        ],
+        "required": ["from", "to", "intensity"],
         "properties": {
           "from": {
             "type": "string",
@@ -1984,12 +1890,7 @@
           "intensity": {
             "type": "object",
             "description": "Carbon Intensity statistics (max, average, min, index).",
-            "required": [
-              "max",
-              "average",
-              "min",
-              "index"
-            ],
+            "required": ["max", "average", "min", "index"],
             "properties": {
               "max": {
                 "type": "number",
@@ -2005,13 +1906,7 @@
               },
               "index": {
                 "type": "string",
-                "enum": [
-                  "very low",
-                  "low",
-                  "moderate",
-                  "high",
-                  "very high"
-                ],
+                "enum": ["very low", "low", "moderate", "high", "very high"],
                 "description": "The index is a measure of the Carbon Intensity represented on a scale between 'very low', 'low', 'moderate', 'high', 'very high'."
               }
             }
@@ -2037,11 +1932,7 @@
             }
           }
         },
-        "required": [
-          "from",
-          "to",
-          "generationmix"
-        ]
+        "required": ["from", "to", "generationmix"]
       },
       "RegionalFromToObject": {
         "type": "object",
@@ -2061,11 +1952,7 @@
             }
           }
         },
-        "required": [
-          "from",
-          "to",
-          "regions"
-        ]
+        "required": ["from", "to", "regions"]
       },
       "RegionalIDObject": {
         "type": "object",
@@ -2099,20 +1986,11 @@
                   },
                   "index": {
                     "type": "string",
-                    "enum": [
-                      "very low",
-                      "low",
-                      "moderate",
-                      "high",
-                      "very high"
-                    ],
+                    "enum": ["very low", "low", "moderate", "high", "very high"],
                     "description": "The index is a measure of the Carbon Intensity represented on a scale between 'very low', 'low', 'moderate', 'high', 'very high'."
                   }
                 },
-                "required": [
-                  "forecast",
-                  "index"
-                ]
+                "required": ["forecast", "index"]
               },
               "from": {
                 "type": "string",
@@ -2130,20 +2008,10 @@
                 }
               }
             },
-            "required": [
-              "from",
-              "to",
-              "intensity",
-              "generationmix"
-            ]
+            "required": ["from", "to", "intensity", "generationmix"]
           }
         },
-        "required": [
-          "regionid",
-          "dnoregion",
-          "postcode",
-          "data"
-        ]
+        "required": ["regionid", "dnoregion", "postcode", "data"]
       },
       "RegionsObject": {
         "type": "object",
@@ -2173,20 +2041,11 @@
               },
               "index": {
                 "type": "string",
-                "enum": [
-                  "very low",
-                  "low",
-                  "moderate",
-                  "high",
-                  "very high"
-                ],
+                "enum": ["very low", "low", "moderate", "high", "very high"],
                 "description": "The index is a measure of the Carbon Intensity represented on a scale between 'very low', 'low', 'moderate', 'high', 'very high'."
               }
             },
-            "required": [
-              "forecast",
-              "index"
-            ]
+            "required": ["forecast", "index"]
           },
           "generationmix": {
             "type": "array",
@@ -2196,14 +2055,7 @@
             }
           }
         },
-        "required": [
-          "regionid",
-          "dnoregion",
-          "shortname",
-          "postcode",
-          "intensity",
-          "generationmix"
-        ]
+        "required": ["regionid", "dnoregion", "shortname", "postcode", "intensity", "generationmix"]
       },
       "FuelTypesObject": {
         "type": "object",
@@ -2217,10 +2069,7 @@
             "description": "Generation output of fuel type as a percentage of total generation."
           }
         },
-        "required": [
-          "fuel",
-          "perc"
-        ]
+        "required": ["fuel", "perc"]
       },
       "Error": {
         "type": "object",
