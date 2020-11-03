@@ -1,6 +1,6 @@
 import { serial, SerialInterface } from "ava";
-import * as CarbonIntensity from './carbonintensity';
+import * as CarbonIntensity from "./carbonIntensityNational";
 
-const test = serial as SerialInterface
+const test = serial as SerialInterface;
 
 CarbonIntensity.tests(test);
