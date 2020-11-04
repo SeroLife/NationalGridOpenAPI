@@ -652,7 +652,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/Generation"
+                  "$ref": "#/components/schemas/GenerationDataObject"
                 }
               }
             }
@@ -702,7 +702,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/Generation"
+                  "$ref": "#/components/schemas/GenerationDataArray"
                 }
               }
             }
@@ -761,7 +761,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/Generation"
+                  "$ref": "#/components/schemas/GenerationDataArray"
                 }
               }
             }
@@ -841,7 +841,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalFromTo"
+                  "$ref": "#/components/schemas/RegionalIDDataArray"
                 }
               }
             }
@@ -881,7 +881,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalFromTo"
+                  "$ref": "#/components/schemas/RegionalIDDataArray"
                 }
               }
             }
@@ -921,7 +921,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalFromTo"
+                  "$ref": "#/components/schemas/RegionalIDDataArray"
                 }
               }
             }
@@ -971,7 +971,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalID"
+                  "$ref": "#/components/schemas/RegionalIDDataArray"
                 }
               }
             }
@@ -1021,7 +1021,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalID"
+                  "$ref": "#/components/schemas/RegionalIDDataArray"
                 }
               }
             }
@@ -1130,7 +1130,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalID"
+                  "$ref": "#/components/schemas/RegionalIDDataObject"
                 }
               }
             }
@@ -1189,7 +1189,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalID"
+                  "$ref": "#/components/schemas/RegionalIDDataObject"
                 }
               }
             }
@@ -1298,7 +1298,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalID"
+                  "$ref": "#/components/schemas/RegionalIDDataObject"
                 }
               }
             }
@@ -1357,7 +1357,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalID"
+                  "$ref": "#/components/schemas/RegionalIDDataObject"
                 }
               }
             }
@@ -1466,7 +1466,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalID"
+                  "$ref": "#/components/schemas/RegionalIDDataObject"
                 }
               }
             }
@@ -1593,7 +1593,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalID"
+                  "$ref": "#/components/schemas/RegionalIDDataObject"
                 }
               }
             }
@@ -1661,7 +1661,7 @@
             "content": {
               "application/json;charset=UTF-8;": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegionalID"
+                  "$ref": "#/components/schemas/RegionalIDDataObject"
                 }
               }
             }
@@ -1716,7 +1716,7 @@
         },
         "required": ["data"]
       },
-      "RegionalID": {
+      "RegionalIDDataArray": {
         "type": "object",
         "properties": {
           "data": {
@@ -1724,6 +1724,15 @@
             "items": {
               "$ref": "#/components/schemas/RegionalIDObject"
             }
+          }
+        },
+        "required": ["data"]
+      },
+      "RegionalIDDataObject": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/RegionalIDObject"
           }
         },
         "required": ["data"]
@@ -1752,7 +1761,7 @@
         },
         "required": ["data"]
       },
-      "Generation": {
+      "GenerationDataArray": {
         "type": "object",
         "properties": {
           "data": {
@@ -1760,6 +1769,15 @@
             "items": {
               "$ref": "#/components/schemas/GenerationObject"
             }
+          }
+        },
+        "required": ["data"]
+      },
+      "GenerationDataObject": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GenerationObject"
           }
         },
         "required": ["data"]
