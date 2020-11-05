@@ -1,14 +1,11 @@
-import {
-  CarbonIntensityNationalApi,
-  CarbonIntensityRegionalBetaApi,
-  GenerationMixNationalBetaApi,
-  StatisticsNationalApi,
-} from '../../package/src/nationalGrid';
+import { NationalGridApiClient } from '../../package/lib';
 
-export const carbonIntensityNationalApiClient = new CarbonIntensityNationalApi();
+const apiClient = new NationalGridApiClient();
 
-export const carbonIntensityRegionalApiClient = new CarbonIntensityRegionalBetaApi();
+export const carbonIntensityNationalApiClient = apiClient.carbonIntensityNationalApi;
 
-export const statisticsNationalApiClient = new StatisticsNationalApi();
+export const carbonIntensityRegionalApiClient = apiClient.carbonIntensityRegionalBetaApi;
 
-export const generationMixNationalApiClient = new GenerationMixNationalBetaApi();
+export const statisticsNationalApiClient = apiClient.statisticsNationalApi;
+
+export const generationMixNationalApiClient = apiClient.generationMixNationalBetaApi;

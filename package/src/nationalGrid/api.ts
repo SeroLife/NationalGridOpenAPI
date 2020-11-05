@@ -892,7 +892,7 @@ export const CarbonIntensityNationalApiAxiosParamCreator = function (configurati
         },
         /**
          * Get Carbon Intensity data for current half hour. All times provided in UTC (+00:00).
-         * @summary Get Carbon Intensity data for current half hour
+         * @summary Get Carbon Intensity data for current half hour.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1057,7 +1057,7 @@ export const CarbonIntensityNationalApiFp = function(configuration?: Configurati
         },
         /**
          * Get Carbon Intensity data for current half hour. All times provided in UTC (+00:00).
-         * @summary Get Carbon Intensity data for current half hour
+         * @summary Get Carbon Intensity data for current half hour.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1169,7 +1169,7 @@ export const CarbonIntensityNationalApiFactory = function (configuration?: Confi
         },
         /**
          * Get Carbon Intensity data for current half hour. All times provided in UTC (+00:00).
-         * @summary Get Carbon Intensity data for current half hour
+         * @summary Get Carbon Intensity data for current half hour.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1277,7 +1277,7 @@ export interface CarbonIntensityNationalApiInterface {
 
     /**
      * Get Carbon Intensity data for current half hour. All times provided in UTC (+00:00).
-     * @summary Get Carbon Intensity data for current half hour
+     * @summary Get Carbon Intensity data for current half hour.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CarbonIntensityNationalApiInterface
@@ -1403,7 +1403,7 @@ export class CarbonIntensityNationalApi extends BaseAPI implements CarbonIntensi
 
     /**
      * Get Carbon Intensity data for current half hour. All times provided in UTC (+00:00).
-     * @summary Get Carbon Intensity data for current half hour
+     * @summary Get Carbon Intensity data for current half hour.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CarbonIntensityNationalApi

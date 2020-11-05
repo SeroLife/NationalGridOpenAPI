@@ -10,6 +10,6 @@ export class NationalGridApiClient {
 
   carbonIntensityNationalApi = new CarbonIntensityNationalApi();
   carbonIntensityRegionalBetaApi = new CarbonIntensityRegionalBetaApi();
-  enerationMixNationalBetaApi = new GenerationMixNationalBetaApi();
+  generationMixNationalBetaApi = new GenerationMixNationalBetaApi();
   statisticsNationalApi = new StatisticsNationalApi();
 }
