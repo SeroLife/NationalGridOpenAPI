@@ -3,7 +3,7 @@ import {
   CarbonIntensityRegionalBetaApi,
   GenerationMixNationalBetaApi,
   StatisticsNationalApi,
-} from './nationalgrid';
+} from './nationalGrid';
 
 export class NationalGridApiClient {
   constructor() {}
