@@ -6,7 +6,7 @@ Built using OpenAPIGenerator.
 
 ## Installing
 
-`npm i @sero-digital/national-grid-api`
+`npm i @serodigital/national-grid-api-client`
 
 ## Usage
 
