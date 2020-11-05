@@ -23,3 +23,12 @@ npm run test-api-client
 Follow the examples already created inside the .json document.
 
 [https://swagger.io/specification/](https://swagger.io/specification/)
+
+## Releasing
+
+When you want to release a new version to the npm registry. Simply Tag the `main` branch of the repository on GitHub. This will trigger a Actions workflow.
+Semantic versions please: `vMajor.minor.patch` e.g `v1.0.0`.
+
+## Conventions
+
+Please use Commitizen to keep commit messages consistent.
