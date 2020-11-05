@@ -24,7 +24,7 @@ import { copyFilesAsync, getFileExtension, removeDirectoryAsync } from './helper
   const tmpOutputPath = resolve(__dirname, './tmp/nationalgrid-api');
 
   const onshapeSwaggerPath = resolve(__dirname, '..', 'openapi.json');
-  const outputPath = resolve(__dirname, '..', 'package', 'src', 'nationalgrid');
+  const outputPath = resolve(__dirname, '..', 'package', 'src', 'nationalGrid');
 
   try {
     await FileSystem.makeDirectory(tmpOutputPath, { recursive: true });
