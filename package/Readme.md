@@ -11,10 +11,11 @@ Built using OpenAPIGenerator.
 ## Usage
 
 ```typescript
-const carbonIntensityNationalApiClient = new CarbonIntensityNationalApi();
-const carbonIntensityRegionalApiClient = new CarbonIntensityRegionalBetaApi();
-const statisticsNationalApiClient = new StatisticsNationalApi();
-const generationMixNationalApiClient = new GenerationMixNationalBetaApi();
+const apiClient = new NationalGridApiClient();
+const carbonIntensityNationalApiClient = apiClient.carbonIntensityNationalApi();
+const carbonIntensityRegionalApiClient = apiClient.CarbonIntensityRegionalBetaApi();
+const statisticsNationalApiClient = apiClient.StatisticsNationalApi();
+const generationMixNationalApiClient = apiClient.GenerationMixNationalBetaApi();
 
 const result = await carbonIntensityNationalApiClient.intensityGet();
 console.log(result.data.data);
