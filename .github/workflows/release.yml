@@ -1,0 +1,28 @@
+name: Release
+on:
+  create:
+    tags:
+      - 'v*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install
+        run: npm install
+      - name: Generate
+        run: npm run generate
+      - name: Build Package
+        run: (cd package && npm run build)
+      - name: Test
+        run: npm run test-api-client
+      - id: get_version
+        uses: battila7/get-version-action@v2
+      - name: Publish
+        run: (cd package && npm version ${{ steps.get_version.outputs.version-without-v }} --allow-same-version && npm publish --access public)
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,5 +1,5 @@
 import { ExecutionContext, SerialInterface } from 'ava';
-import { statisticsNationalApiClient } from './client/api';
+import { statisticsNationalApiClient } from '../client/api';
 
 export function tests(test: SerialInterface): void {
   test('Statistics National: between two specified DateTimes | it should return correct values', async (t: ExecutionContext) => {

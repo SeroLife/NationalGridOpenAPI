@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "(cd package && npm i)",
     "ts-run": "ts-node -P ./tsconfig.json",
-    "generate": "npm run ts-run -- index.ts",
-    "test": "npm run ts-run -- _tests/basic.ts",
-    "test-api": "nyc ava _tests/*.test.ts --verbose --concurrency=8 --timeout=2m"
+    "generate": "./node_modules/ts-node/dist/bin.js -P ./tsconfig.json -- src/index.ts",
+    "build-package": "(cd package && npm run build)",
+    "start": "npm run generate && npm run build-package",
+    "test-api-client": "nyc ava _tests/api/*.test.ts --verbose --concurrency=8 --timeout=2m",
+    "commit": "git-cz"
   },
   "author": "Rocketmakers",
   "license": "ISC",
@@ -26,5 +29,22 @@
     "require": [
       "ts-node/register"
     ]
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog",
+      "disableScopeLowerCase": false,
+      "disableSubjectLowerCase": false,
+      "maxHeaderWidth": 100,
+      "maxLineWidth": 100,
+      "defaultType": "",
+      "defaultScope": "",
+      "defaultSubject": "",
+      "defaultBody": "",
+      "defaultIssues": ""
+    }
   }
 }

@@ -1,5 +1,5 @@
 import { ExecutionContext, SerialInterface } from 'ava';
-import { generationMixNationalApiClient } from './client/api';
+import { generationMixNationalApiClient } from '../client/api';
 
 export function tests(test: SerialInterface): void {
   test('Generation Mix National: for current half hour | it should return correct values', async (t: ExecutionContext) => {

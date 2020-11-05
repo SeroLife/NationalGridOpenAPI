@@ -3,7 +3,7 @@ import {
   CarbonIntensityRegionalBetaApi,
   GenerationMixNationalBetaApi,
   StatisticsNationalApi,
-} from '../../nationalgrid/sdk';
+} from '../../package/src/nationalGrid';
 
 export const carbonIntensityNationalApiClient = new CarbonIntensityNationalApi();
 

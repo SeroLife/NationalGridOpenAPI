@@ -1,5 +1,5 @@
 import { ExecutionContext, SerialInterface } from 'ava';
-import { carbonIntensityRegionalApiClient } from './client/api';
+import { carbonIntensityRegionalApiClient } from '../client/api';
 
 export function tests(test: SerialInterface): void {
   test('Regional intensity: current half hour | it should return correct values', async (t: ExecutionContext) => {
